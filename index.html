@@ -53,6 +53,13 @@
             animation: fadeIn 2.5s ease-in-out;
         }
 
+        .countdown {
+            font-size: 2em;
+            font-weight: 600;
+            margin-top: 1em;
+            animation: fadeIn 3s ease-in-out;
+        }
+
         .details {
             font-size: 1.2em;
             font-weight: 400;
@@ -93,13 +100,45 @@
             .details {
                 font-size: 1em;
             }
+
+            .countdown {
+                font-size: 1.5em;
+            }
         }
     </style>
+    <script>
+        function startCountdown() {
+            const targetDate = new Date('2025-02-03T00:00:00').getTime();
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    countdownElement.innerHTML = "🚀 We're live now!";
+                    clearInterval(interval);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `🕒 ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+    </script>
 </head>
-<body>
+<body onload="startCountdown()">
     <div class="container">
         <h1>🚀 Coming Soon</h1>
         <p>✨ Our website is under construction. We're working hard to bring you an exceptional experience. Stay tuned!</p>
+        <div id="countdown" class="countdown"></div>
         <div class="details">
             <p>💪 KayaFit is redefining fitness and wellness. Get ready for cutting-edge training programs, personalized plans, and an inspiring community to help you reach your goals.</p>
         </div>
