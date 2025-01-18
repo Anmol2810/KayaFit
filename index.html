@@ -3,107 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - KayaFit</title>
+    <title>KayaFit - Coming Soon</title>
     <style>
         body {
             margin: 0;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080.jpg') no-repeat center center/cover;
-            color: #fff;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
             overflow: hidden;
         }
 
         .container {
             text-align: center;
-            padding: 4em 2em;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
             max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            padding: 20px;
         }
 
         h1 {
-            font-size: 4em;
-            font-weight: 700;
-            margin-bottom: 0.5em;
-            letter-spacing: 1.5px;
-            animation: slideDown 1.5s ease-in-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #555;
         }
 
         p {
-            font-size: 1.4em;
-            font-weight: 300;
-            line-height: 1.8;
-            margin-bottom: 1.5em;
-            animation: fadeIn 2.5s ease-in-out;
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 2rem;
         }
 
         .countdown {
-            font-size: 2em;
-            font-weight: 600;
-            margin-top: 1em;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        .details {
-            font-size: 1.2em;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-top: 2em;
-            animation: fadeIn 3s ease-in-out;
+            font-size: 1.5rem;
+            color: #555;
+            font-weight: bold;
         }
 
         footer {
-            position: absolute;
-            bottom: 1em;
-            text-align: center;
-            width: 100%;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        footer a {
-            color: #007aff;
-            text-decoration: none;
-            margin: 0 0.5em;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .details {
-                font-size: 1em;
-            }
-
-            .countdown {
-                font-size: 1.5em;
-            }
+            margin-top: 20px;
         }
     </style>
     <script>
@@ -116,7 +55,7 @@
                 const distance = targetDate - now;
 
                 if (distance < 0) {
-                    countdownElement.innerHTML = "🚀 We're live now!";
+                    countdownElement.innerHTML = "We're live now!";
                     clearInterval(interval);
                     return;
                 }
@@ -126,7 +65,7 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                countdownElement.innerHTML = `🕒 ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
             const interval = setInterval(updateCountdown, 1000);
@@ -136,15 +75,9 @@
 </head>
 <body onload="startCountdown()">
     <div class="container">
-        <h1>🚀 Coming Soon</h1>
-        <p>✨ Our website is under construction. We're working hard to bring you an exceptional experience. Stay tuned!</p>
+        <h1>KayaFit - Coming Soon</h1>
+        <p>Our site is under construction and will be live on February 3rd. Stay tuned!</p>
         <div id="countdown" class="countdown"></div>
-        <div class="details">
-            <p>💪 KayaFit is redefining fitness and wellness. Get ready for cutting-edge training programs, personalized plans, and an inspiring community to help you reach your goals.</p>
-        </div>
     </div>
-    <footer>
-        &copy; 2025 KayaFit. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </footer>
 </body>
 </html>
