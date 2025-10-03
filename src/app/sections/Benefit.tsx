@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Benefit() {
     return (
-      <section id="benifits" className="py-10 bg-conic/[from_0deg] from-white via-[#ffb158] to-white text-center rounded-b-3xl">
+      <section id="benifits" className="py-10 bg-conic/[from_0deg] from-[#ffffff] via-[#ffb158] to-[#ffffff] text-center rounded-b-3xl">
         <div className="flex justify-center">
           <h1 className="capitalize bg-[#ffb158] text-[18px] font-bold text-white rounded-xl mb-5 px-3 py-2">Why choose us ?</h1>
         </div>
