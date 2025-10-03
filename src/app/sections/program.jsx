@@ -3,7 +3,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { ReactLenis } from "@studio-freight/react-lenis";
 import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
@@ -93,7 +92,7 @@ export default function Program(){
 );
 
 
-    return (<ReactLenis root>
+    return (<>
     <div className="overflow-x-clip" ref={container}>
     <section className="intro">
         <h1 className="intro-head">At <span className="bg-gradient-to-b from-[#14AE5C] to-[#164D30] text-transparent bg-clip-text">Kayafit</span>, we help you become your best self with personalized fitness, nutrition, and recovery solutions!</h1>
@@ -109,6 +108,6 @@ export default function Program(){
     </div>
     </section>
     </div>
-    </ReactLenis>
+    </>
     );
 }
